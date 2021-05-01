@@ -1,6 +1,6 @@
 module BootstrapEmail
   class SassCache
-    CACHE_DIR = File.expand_path('../../.sass-cache', __dir__)
+    CACHE_DIR = File.join(Dir.mktmpdir,'.sass-cache')
     SASS_DIR = File.expand_path('../../core', __dir__)
 
     def self.compile(type, config_path: nil, style: :compressed)
